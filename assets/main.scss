@@ -1,0 +1,105 @@
+$primary: #5AF;
+$linkedInBlue: #1751a7;
+$grey1: #c8c8c8;
+
+* {
+    font-family: "Roboto", "sans-serif"; /* stylelint-disable-line */
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+// xs screen (vuetify breakpoints)
+@media only screen and (max-width: 599px)  {
+  // fill in
+}
+
+// sm screen (vuetify breakpoints)
+@media only screen and (min-width: 600px) and (max-width: 959px)  {
+  // fill in
+}
+
+// md screen (vuetify breakpoints)
+@media only screen and (min-width: 960px) and (max-width: 1263px)  {
+  // fill in
+}
+
+// lg screen (vuetify breakpoints)
+@media only screen and (min-width: 1264px) and (max-width: 1903px)  {
+    .pages-div-container {
+        padding-left: 200px;
+        padding-right: 200px
+    }
+}
+
+// --------------------------------- APP BAR HEADER  ---------------------------------
+
+.appbar {
+    h2, h3 {
+        font-weight: 400;
+    }
+
+    h3 {
+        transition: text-decoration .3s, color .3s;
+        cursor: pointer;
+        &:hover {
+            color: $primary;
+            text-decoration: underline solid $primary;
+
+        }
+    }
+
+    .hamburger-menu {
+        position: relative;
+        bottom: 13px;
+        left: 5px;
+    }
+
+    .test {
+        color: cyan !important;
+    }
+}
+
+// --------------------------------- FOOTER ---------------------------------
+
+.footer {
+    .footer-game-divider {
+        border-left: 1px solid black;
+        height: 20px;
+    }
+
+    font-size: 13px;
+}
+
+// --------------------------------- ABOUT ME ---------------------------------
+
+.about-me {
+    height: calc(100vh - 40px);
+
+            .headshot-img {
+        border-radius: 15%;
+        border: $grey1 solid 2px;
+    }
+
+    .circles-left {
+        z-index: 5;
+
+        .circle-1 {
+            background-color: cyan;
+            height: 200px;
+            width: 200px;
+            top: 70%;
+            left: 100%;
+            position: relative;
+            border-radius: 100%;
+        }
+
+        .circle-2 {
+            background-color: cyan;
+            height: 150px;
+            width: 150px;
+            border-radius: 100%;
+        }
+    }
+}
