@@ -1,13 +1,70 @@
 $primary: #5AF;
 $linkedInBlue: #1751a7;
 $grey1: #c8c8c8;
+$backgroundCircles: #F6F9FE;
 
+// --------------------------------- GLOBAL  ---------------------------------
 * {
     font-family: "Roboto", "sans-serif"; /* stylelint-disable-line */
 }
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.background-circles {
+  z-index: 0;
+
+  .circle-1, .circle-2, .circle-3 {
+    background-color: $primary;
+    border-radius: 100%;
+    position: relative;
+  }
+
+  .circles-left {
+    .circle-1 {
+      height: 300px;
+      width: 300px;
+      right: 12vw;
+    }
+
+    .circle-2 {
+      height: 275px;
+      width: 275px;
+      top: 7vh; // +7vh
+      right: 5vw; // -7vw
+    }
+
+    .circle-3 {
+      height: 250px;
+      width: 250px;
+      top: 8vh; // +8vh
+      left: 10vw; // -22vw
+    }
+  }
+
+  .circles-right {
+    .circle-1 {
+      height: 300px;
+      width: 300px;
+      left: 74vw;
+    }
+
+    .circle-2 {
+      height: 275px;
+      width: 275px;
+      top: 7vh;
+      left: 67vw;
+    }
+
+    .circle-3 {
+      height: 250px;
+      width: 250px;
+      top: 8vh;
+      left: 52vw;
+    }
+  }
+
 }
 
 // xs screen (vuetify breakpoints)
@@ -34,35 +91,33 @@ $grey1: #c8c8c8;
 }
 
 // --------------------------------- APP BAR HEADER  ---------------------------------
-
 .appbar {
-    h2, h3 {
+    h2 {
         font-weight: 400;
     }
 
-    h3 {
-        transition: text-decoration .3s, color .3s;
-        cursor: pointer;
-        &:hover {
-            color: $primary;
-            text-decoration: underline solid $primary;
+  .v-btn {
+    box-shadow: none !important;
+  }
 
-        }
-    }
+    //h3 {
+    //    transition: text-decoration .3s, color .3s;
+    //    cursor: pointer;
+    //    &:hover {
+    //        color: $primary;
+    //        text-decoration: underline solid $primary;
+    //
+    //    }
+    //}
 
     .hamburger-menu {
         position: relative;
         bottom: 13px;
         left: 5px;
     }
-
-    .test {
-        color: cyan !important;
-    }
 }
 
 // --------------------------------- FOOTER ---------------------------------
-
 .footer {
     .footer-game-divider {
         border-left: 1px solid black;
@@ -73,33 +128,11 @@ $grey1: #c8c8c8;
 }
 
 // --------------------------------- ABOUT ME ---------------------------------
-
 .about-me {
     height: calc(100vh - 40px);
 
             .headshot-img {
         border-radius: 15%;
         border: $grey1 solid 2px;
-    }
-
-    .circles-left {
-        z-index: 5;
-
-        .circle-1 {
-            background-color: cyan;
-            height: 200px;
-            width: 200px;
-            top: 70%;
-            left: 100%;
-            position: relative;
-            border-radius: 100%;
-        }
-
-        .circle-2 {
-            background-color: cyan;
-            height: 150px;
-            width: 150px;
-            border-radius: 100%;
-        }
     }
 }
