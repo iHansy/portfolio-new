@@ -4,8 +4,6 @@
     <v-col cols="12" md="6" class="d-flex justify-center align-center">
       <div class="pb-15">
         <v-img
-          max-height="400"
-          max-width="400"
           :src="require('/static/headshot.jpg')"
           class="headshot-img animate__animated animate__fadeInLeft"
         />

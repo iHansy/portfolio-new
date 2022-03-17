@@ -1,21 +1,23 @@
-$primary: #5AF;
+$primary: #5af;
 $linkedInBlue: #1751a7;
 $grey1: #c8c8c8;
-$backgroundCircles: #F6F9FE;
+$backgroundCircles: #f6f9fe;
 
 // --------------------------------- GLOBAL  ---------------------------------
 * {
-    font-family: "Roboto", "sans-serif"; /* stylelint-disable-line */
+  font-family: 'Roboto', 'sans-serif'; /* stylelint-disable-line */
 }
 
 .cursor-pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .background-circles {
   z-index: 0;
 
-  .circle-1, .circle-2, .circle-3 {
+  .circle-1,
+  .circle-2,
+  .circle-3 {
     background-color: $primary;
     border-radius: 100%;
     position: relative;
@@ -64,75 +66,90 @@ $backgroundCircles: #F6F9FE;
       left: 52vw;
     }
   }
-
 }
 
 // xs screen (vuetify breakpoints)
-@media only screen and (max-width: 599px)  {
-  // fill in test2
+@media only screen and (max-width: 599px) {
+  .headshot-img {
+    height: 250px;
+    width: 250px;
+  }
 }
 
 // sm screen (vuetify breakpoints)
-@media only screen and (min-width: 600px) and (max-width: 959px)  {
-  // fill in
+@media only screen and (min-width: 600px) {
+  .headshot-img {
+    height: 300px;
+    width: 300px;
+  }
 }
 
 // md screen (vuetify breakpoints)
-@media only screen and (min-width: 960px) and (max-width: 1263px)  {
-  // fill in
+@media only screen and (min-width: 960px) {
+  .pages-div-container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .headshot-img {
+    height: 350px;
+    width: 350px;
+  }
 }
 
 // lg screen (vuetify breakpoints)
-@media only screen and (min-width: 1264px) and (max-width: 1903px)  {
-    .pages-div-container {
-        padding-left: 200px;
-        padding-right: 200px
-    }
+@media only screen and (min-width: 1264px) {
+  .pages-div-container {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .headshot-img {
+    height: 400px;
+    width: 400px;
+  }
 }
 
 // --------------------------------- APP BAR HEADER  ---------------------------------
 .appbar {
-    h2 {
-        font-weight: 400;
-    }
-
-  .v-btn {
-    box-shadow: none !important;
+  h2 {
+    font-weight: 400;
   }
 
-    //h3 {
-    //    transition: text-decoration .3s, color .3s;
-    //    cursor: pointer;
-    //    &:hover {
-    //        color: $primary;
-    //        text-decoration: underline solid $primary;
-    //
-    //    }
-    //}
-
-    .hamburger-menu {
-        position: relative;
-        bottom: 13px;
-        left: 5px;
+  .v-btn {
+    height: 30px !important;
+    box-shadow: none !important;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary !important;
+      color: white !important;
     }
+  }
+
+  .hamburger-menu {
+    position: relative;
+    bottom: 13px;
+    left: 5px;
+  }
 }
 
 // --------------------------------- FOOTER ---------------------------------
 .footer {
-    .footer-game-divider {
-        border-left: 1px solid black;
-        height: 20px;
-    }
+  font-size: 13px;
 
-    font-size: 13px;
+  .footer-game-divider {
+    border-left: 1px solid black;
+    height: 20px;
+  }
 }
 
 // --------------------------------- ABOUT ME ---------------------------------
 .about-me {
-    height: calc(100vh - 40px);
+  height: calc(100vh - 40px);
 
-            .headshot-img {
-        border-radius: 15%;
-        border: $grey1 solid 2px;
-    }
+  .headshot-img {
+    border-radius: 15%;
+    border: $grey1 solid 2px;
+  }
 }
