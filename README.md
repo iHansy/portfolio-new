@@ -1,6 +1,6 @@
 # portfolio-new
 
-Time Spent -
+Time Spent
 <br/>
 Developing: 10 hrs
 <br/>
