@@ -70,6 +70,11 @@ $backgroundCircles: #f6f9fe;
 
 // xs screen (vuetify breakpoints)
 @media only screen and (max-width: 599px) {
+  .pages-div-container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
   .headshot-img {
     height: 250px;
     width: 250px;
@@ -78,17 +83,35 @@ $backgroundCircles: #f6f9fe;
 
 // sm screen (vuetify breakpoints)
 @media only screen and (min-width: 600px) {
+  .pages-div-container {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
   .headshot-img {
-    height: 300px;
-    width: 300px;
+    height: 275px;
+    width: 275px;
   }
 }
 
 // md screen (vuetify breakpoints)
 @media only screen and (min-width: 960px) {
   .pages-div-container {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .headshot-img {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+// lg screen (vuetify breakpoints)
+@media only screen and (min-width: 1264px) {
+  .pages-div-container {
+    padding-left: 125px;
+    padding-right: 125px;
   }
 
   .headshot-img {
@@ -97,8 +120,8 @@ $backgroundCircles: #f6f9fe;
   }
 }
 
-// lg screen (vuetify breakpoints)
-@media only screen and (min-width: 1264px) {
+// custom largest screen
+@media only screen and (min-width: 1500px) {
   .pages-div-container {
     padding-left: 200px;
     padding-right: 200px;
@@ -146,10 +169,9 @@ $backgroundCircles: #f6f9fe;
 
 // --------------------------------- ABOUT ME ---------------------------------
 .about-me {
-  height: calc(100vh - 40px);
+  min-height: calc(100vh - 40px);
 
   .headshot-img {
     border-radius: 15%;
-    border: $grey1 solid 2px;
   }
 }

@@ -1,16 +1,16 @@
 <template>
   <v-row class="about-me">
     <BackgroundCirclesComponent style="opacity: 8%" />
-    <v-col cols="12" md="6" class="d-flex justify-center align-center">
-      <div class="pb-15">
+    <v-col cols="12" md="5" class="d-flex justify-center align-center">
+      <div class="pt-10 pb-3 pb-md-15 pt-md-0">
         <v-img
           :src="require('/static/headshot.jpg')"
           class="headshot-img animate__animated animate__fadeInLeft"
         />
       </div>
     </v-col>
-    <v-col cols="12" md="6" class="d-flex justify-center align-center">
-      <div class="pb-15 animate__animated animate__fadeInRight">
+    <v-col cols="12" md="7" class="d-flex justify-center align-center">
+      <div class="pb-lg-15 animate__animated animate__fadeInRight">
         <h1 class="text-center pb-7">Welcome</h1>
         <p class="pb-3">
           Hi there, I’m Hans Accola, a full-stack software developer. I’m
