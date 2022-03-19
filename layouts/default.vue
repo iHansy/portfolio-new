@@ -53,21 +53,20 @@
             About Me
           </v-btn>
           <v-btn
-            text
             class="d-inline-block nav-btns"
-            @click="handleClickScroll('technologies-component')"
+            @click="handleClickScroll('technologies-title')"
           >
             Technologies
           </v-btn>
           <v-btn
             class="d-inline-block nav-btns"
-            @click="handleClickScroll('projects-component')"
+            @click="handleClickScroll('projects-title')"
           >
             Projects
           </v-btn>
           <v-btn
             class="d-inline-block nav-btns"
-            @click="handleClickScroll('contact-component')"
+            @click="handleClickScroll('contact-title')"
           >
             Contact
           </v-btn>
@@ -81,41 +80,41 @@
             class="mb-0 py-1"
             @click="handleClickScroll('about-me-component')"
           >
-            <v-icon class="pr-4">mdi-account</v-icon>
+            <v-icon color="primary" class="pr-4">mdi-account</v-icon>
             About Me
           </v-list-item>
           <v-divider />
           <v-list-item
             class="mb-0 py-1"
-            @click="handleClickScroll('technologies-component')"
+            @click="handleClickScroll('technologies-title')"
           >
-            <v-icon class="pr-4">mdi-web</v-icon>
+            <v-icon color="primary" class="pr-4">mdi-web</v-icon>
             Technologies
           </v-list-item>
           <v-divider />
           <v-list-item
             class="mb-0 py-1"
-            @click="handleClickScroll('projects-component')"
+            @click="handleClickScroll('projects-title')"
           >
-            <v-icon class="pr-4">mdi-clipboard-text</v-icon>
+            <v-icon color="primary" class="pr-4">mdi-clipboard-text</v-icon>
             Projects
           </v-list-item>
           <v-divider />
           <v-list-item
             class="mb-0 py-1"
-            @click="handleClickScroll('contact-component')"
+            @click="handleClickScroll('contact-title')"
           >
-            <v-icon class="pr-4">mdi-hand-wave</v-icon>
+            <v-icon color="primary" class="pr-4">mdi-hand-wave</v-icon>
             Contact
           </v-list-item>
-          <v-divider />
+          <v-divider style="background-color: black !important" class="my-8" />
           <v-list-item class="mb-0 py-1" @click="closeDrawer">
-            <v-icon class="pr-4">mdi-emoticon-excited</v-icon>
+            <v-icon color="primary" class="pr-4">mdi-emoticon-excited</v-icon>
             Feeling Adventurous?
           </v-list-item>
           <v-divider />
           <v-list-item class="mb-0 py-1" @click="closeDrawer">
-            <v-icon class="pr-4">mdi-trophy</v-icon>
+            <v-icon color="primary" class="pr-4">mdi-trophy</v-icon>
             Highscores
           </v-list-item>
         </v-list-item-group>

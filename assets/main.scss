@@ -1,6 +1,7 @@
-$primary: #67a4f1;
-$linkedInBlue: #1751a7;
-$grey1: #c8c8c8;
+$primary: #6dadff;
+$linkedInBlue: #2c66bc;
+$grey1: #f5f5f5;
+$grey2: #f0f0f0;
 $backgroundCircles: #f6f9fe;
 
 // --------------------------------- GLOBAL  ---------------------------------
@@ -10,6 +11,10 @@ $backgroundCircles: #f6f9fe;
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+h1 {
+  font-weight: 500;
 }
 
 .background-circles {
@@ -70,7 +75,7 @@ $backgroundCircles: #f6f9fe;
 
 // xs screen (vuetify breakpoints)
 @media only screen and (max-width: 599px) {
-  .pages-div-container {
+  .div-page-container {
     padding-left: 25px;
     padding-right: 25px;
   }
@@ -83,7 +88,7 @@ $backgroundCircles: #f6f9fe;
 
 // sm screen (vuetify breakpoints)
 @media only screen and (min-width: 600px) {
-  .pages-div-container {
+  .div-page-container {
     padding-left: 35px;
     padding-right: 35px;
   }
@@ -96,7 +101,7 @@ $backgroundCircles: #f6f9fe;
 
 // md screen (vuetify breakpoints)
 @media only screen and (min-width: 960px) {
-  .pages-div-container {
+  .div-page-container {
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -109,7 +114,7 @@ $backgroundCircles: #f6f9fe;
 
 // lg screen (vuetify breakpoints)
 @media only screen and (min-width: 1264px) {
-  .pages-div-container {
+  .div-page-container {
     padding-left: 125px;
     padding-right: 125px;
   }
@@ -122,7 +127,7 @@ $backgroundCircles: #f6f9fe;
 
 // custom largest screen
 @media only screen and (min-width: 1500px) {
-  .pages-div-container {
+  .div-page-container {
     padding-left: 200px;
     padding-right: 200px;
   }
@@ -131,6 +136,84 @@ $backgroundCircles: #f6f9fe;
     height: 400px;
     width: 400px;
   }
+}
+
+.divider {
+  display: table;
+  text-align: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  height: 30px;
+}
+.divider span {
+  display: table-cell;
+  position: relative;
+}
+.divider span:first-child,
+.divider span:last-child {
+  width: 50%;
+  top: 14px;
+  -moz-background-size: 100% 3px;
+  background-size: 100% 3px;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+}
+.divider span:first-child {
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(transparent),
+    to(#000)
+  );
+  background-image: -webkit-linear-gradient(180deg, transparent, #000);
+  background-image: -moz-linear-gradient(180deg, transparent, #000);
+  background-image: -o-linear-gradient(180deg, transparent, #000);
+  background-image: linear-gradient(90deg, transparent, #000);
+  left: 11px;
+}
+.divider span:nth-child(2) {
+  color: #000;
+  padding: 0 5px;
+  width: auto;
+  white-space: nowrap;
+}
+.divider span:last-child {
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(#000),
+    to(transparent)
+  );
+  background-image: -webkit-linear-gradient(180deg, #000, transparent);
+  background-image: -moz-linear-gradient(180deg, #000, transparent);
+  background-image: -o-linear-gradient(180deg, #000, transparent);
+  background-image: linear-gradient(90deg, #000, transparent);
+  right: 11px;
+}
+
+.bracket {
+  display: inline-block;
+  font-size: 50px;
+  position: relative;
+  top: 5px;
+  font-weight: 300;
+}
+
+.left-bracket {
+  margin-right: 5px;
+}
+
+.right-bracket {
+  margin-left: 5px;
+}
+
+.text-span {
+  position: relative;
+  bottom: 29px;
 }
 
 // --------------------------------- APP BAR HEADER  ---------------------------------
@@ -144,6 +227,7 @@ $backgroundCircles: #f6f9fe;
     box-shadow: none !important;
     transition: background-color 0.3s;
     cursor: pointer;
+
     &:hover {
       background-color: $primary !important;
       color: white !important;
@@ -178,15 +262,33 @@ $backgroundCircles: #f6f9fe;
 
 // --------------------------------- TECHNOLOGIES ---------------------------------
 .technologies {
-  min-height: calc(100vh);
+  min-height: calc(100vh - 40px);
+
+  .tech-circles-component {
+    opacity: 8%;
+    position: relative;
+    bottom: 30px;
+  }
 }
 
 // --------------------------------- PROJECTS ---------------------------------
 .projects {
-  min-height: calc(100vh);
+  min-height: calc(100vh - 40px);
+
+  .projects-circles-component {
+    opacity: 8%;
+    position: relative;
+    bottom: 30px;
+  }
 }
 
 // --------------------------------- CONTACT ---------------------------------
 .contact {
-  min-height: calc(100vh);
+  min-height: calc(100vh - 87px);
+
+  .contact-circles-component {
+    opacity: 8%;
+    position: relative;
+    bottom: 30px;
+  }
 }

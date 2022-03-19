@@ -45,11 +45,12 @@
   </v-row>
 </template>
 
-import 'animate.css'
-
 <script>
+import BackgroundCirclesComponent from '~/components/reuseables/BackgroundCirclesComponent';
+
 export default {
   name: 'AboutMeComponent',
+  components: { BackgroundCirclesComponent },
   data() {
     return {
       data: true

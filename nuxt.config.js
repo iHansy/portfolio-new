@@ -8,8 +8,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - portfolio-new',
-    title: 'portfolio-new',
+    titleTemplate: '%s',
     htmlAttrs: {
       lang: 'en'
     },
@@ -54,10 +53,11 @@ export default {
           primary: '#000000'
         },
         light: {
-          primary: '#5AF',
-          linkedInBlue: '#2C66BC',
-          grey1: '#c8c8c8',
-          backgroundCircles: '#F6F9FE'
+          primary: '#6dadff',
+          linkedInBlue: '#2c66bc',
+          grey1: '#f5f5f5',
+          grey2: '#f0f0f0',
+          backgroundCircles: '#f6f9fe'
         }
       }
     }
