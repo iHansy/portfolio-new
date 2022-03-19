@@ -1,4 +1,4 @@
-$primary: #5af;
+$primary: #67a4f1;
 $linkedInBlue: #1751a7;
 $grey1: #c8c8c8;
 $backgroundCircles: #f6f9fe;
@@ -174,4 +174,19 @@ $backgroundCircles: #f6f9fe;
   .headshot-img {
     border-radius: 15%;
   }
+}
+
+// --------------------------------- TECHNOLOGIES ---------------------------------
+.technologies {
+  min-height: calc(100vh);
+}
+
+// --------------------------------- PROJECTS ---------------------------------
+.projects {
+  min-height: calc(100vh);
+}
+
+// --------------------------------- CONTACT ---------------------------------
+.contact {
+  min-height: calc(100vh);
 }

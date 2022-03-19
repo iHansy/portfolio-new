@@ -40,21 +40,13 @@
           I maintain a part of the current software and are developing an
           exciting and fresh up-to-date version.
         </p>
-        <!--        <p>-->
-        <!--          My professional IT experience started in 2019 as an inside medical-->
-        <!--          sales rep. After that I worked in IT / IoT services, testing and-->
-        <!--          configuring indoor tracking devices (RTLS). Unfortunately, due to-->
-        <!--          COVID I got laid off. But that opened a new door to pursue my dream of-->
-        <!--          becoming a software engineer! With that spark I earned a certification-->
-        <!--          in Full-Stack Software Engineering at Prime Digital Academy, here in-->
-        <!--          Minneapolis.-->
-        <!--        </p>-->
       </div>
     </v-col>
   </v-row>
 </template>
 
 import 'animate.css'
+
 <script>
 export default {
   name: 'AboutMeComponent',

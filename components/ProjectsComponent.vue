@@ -1,16 +1,19 @@
 <template>
-  <div style="height: 100vh">
+  <v-row class="projects">
+    <BackgroundCirclesComponent style="opacity: 8%" />
     <h1>Projects Component</h1>
-  </div>
+  </v-row>
 </template>
+
+import 'animate.css'
 
 <script>
 export default {
   name: 'ProjectsComponent',
   data() {
     return {
-      data: true,
-    }
-  },
-}
+      data: true
+    };
+  }
+};
 </script>

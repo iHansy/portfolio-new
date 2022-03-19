@@ -1,8 +1,11 @@
 <template>
-  <div style="height: 100vh">
+  <v-row class="technologies">
+    <BackgroundCirclesComponent style="opacity: 8%" />
     <h1>Technologies Component</h1>
-  </div>
+  </v-row>
 </template>
+
+import 'animate.css'
 
 <script>
 export default {

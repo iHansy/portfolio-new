@@ -1,18 +1,19 @@
 <template>
-  <div style="height: 100vh">
+  <v-row class="contact">
+    <BackgroundCirclesComponent style="opacity: 8%" />
     <h1>Contact Component</h1>
-  </div>
+  </v-row>
 </template>
 
-<script>
-export default
+import 'animate.css'
 
-{
+<script>
+export default {
   name: 'ContactComponent',
   data() {
     return {
-      data: true,
-    }
-  },
-}
+      data: true
+    };
+  }
+};
 </script>
