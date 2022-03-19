@@ -9,16 +9,21 @@ $backgroundCircles: #f6f9fe;
   font-family: 'Roboto', 'sans-serif'; /* stylelint-disable-line */
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
 h1 {
   font-weight: 500;
 }
 
+.background-cyan {
+  background-color: cyan;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .background-circles {
   z-index: 0;
+  opacity: 8%;
 
   .circle-1,
   .circle-2,
@@ -141,7 +146,7 @@ h1 {
 .divider {
   display: table;
   text-align: center;
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;
@@ -265,7 +270,6 @@ h1 {
   min-height: calc(100vh - 40px);
 
   .tech-circles-component {
-    opacity: 8%;
     position: relative;
     bottom: 30px;
   }
@@ -276,7 +280,6 @@ h1 {
   min-height: calc(100vh - 40px);
 
   .projects-circles-component {
-    opacity: 8%;
     position: relative;
     bottom: 30px;
   }
@@ -287,7 +290,6 @@ h1 {
   min-height: calc(100vh - 87px);
 
   .contact-circles-component {
-    opacity: 8%;
     position: relative;
     bottom: 30px;
   }

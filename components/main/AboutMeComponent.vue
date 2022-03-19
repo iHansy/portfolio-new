@@ -1,6 +1,6 @@
 <template>
   <v-row class="about-me">
-    <BackgroundCirclesComponent style="opacity: 8%" />
+    <BackgroundCirclesComponent />
     <v-col cols="12" md="5" class="d-flex justify-center align-center">
       <div class="pt-10 pb-3 pb-md-15 pt-md-0">
         <v-img
