@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar
       class="appbar"
-      :height="`${$vuetify.breakpoint.smAndDown ? '50px' : '55px'}`"
+      :height="`${$vuetify.breakpoint.smAndDown ? '50px' : '60px'}`"
       fixed
     >
       <span v-if="$vuetify.breakpoint.smAndDown" style="position: relative">

@@ -2,7 +2,7 @@
 
 Time Spent
 <br/>
-Developing: 11 hrs
+Developing: 14.5 hrs
 <br/>
 Designing: 3.5 hours
 

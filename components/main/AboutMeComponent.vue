@@ -4,7 +4,7 @@
     <v-col cols="12" md="5" class="d-flex justify-center align-center">
       <div class="pt-10 pb-3 pb-md-15 pt-md-0">
         <v-img
-          :src="require('/static/headshot.jpg')"
+          :src="require('/static/about-me/headshot.jpg')"
           class="headshot-img animate__animated animate__fadeInLeft"
         />
       </div>
