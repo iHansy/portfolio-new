@@ -12,9 +12,11 @@
         <h2>Languages & Frameworks</h2>
       </v-col>
       <v-col cols="10" class="background-yellow main-col-right">
-        <v-row
-          ><img
-            :src="require('~/static/technologies/javascript.png')"
+        <v-row>
+          <img
+            v-for="(image, i) in images"
+            :key="i"
+            :src="require('~/static/technologies/bitbucket.png')"
             alt="Javascript Icon"
           />
         </v-row>
@@ -40,7 +42,31 @@ export default {
   data() {
     return {
       title: 'Technologies',
-      titleId: 'technologies-title'
+      titleId: 'technologies-title',
+      images: [
+        { name: 'Bitbucket', src: '~/static/technologies/bitbucket.png' },
+        { name: 'CSS', src: '~/static/technologies/css.png' },
+        { name: 'Docker', src: '~/static/technologies/docker.png' },
+        { name: 'Git', src: '~/static/technologies/git.png' },
+        { name: 'Github', src: '~/static/technologies/github.png' },
+        { name: 'Heroku', src: '~/static/technologies/heroku.png' },
+        { name: 'Html', src: '~/static/technologies/html.png' },
+        { name: 'Javascript', src: '~/static/technologies/javascript.png' },
+        { name: 'Jira', src: '~/static/technologies/jira.png' },
+        { name: 'Material UI', src: '~/static/technologies/material-ui.png' },
+        { name: 'Monday', src: '~/static/technologies/monday.png' },
+        { name: 'Nest.js', src: '~/static/technologies/nestjs.svg' },
+        { name: 'Node.js', src: '~/static/technologies/nodejs.png' },
+        { name: 'Npm', src: '~/static/technologies/npm.png' },
+        { name: 'Phpstorm', src: '~/static/technologies/phpstorm.jpeg' },
+        { name: 'Postgresql', src: '~/static/technologies/postgresql.png' },
+        { name: 'React.js', src: '~/static/technologies/reactjs.svg' },
+        { name: 'Scss', src: '~/static/technologies/scss.png' },
+        { name: 'Typeorm', src: '~/static/technologies/typeorm.jpeg' },
+        { name: 'Vscode', src: '~/static/technologies/vscode.png' },
+        { name: 'Vue.js', src: '~/static/technologies/vuejs.png' },
+        { name: 'Vuetify', src: '~/static/technologies/vuetify.png' }
+      ]
     };
   }
 };
