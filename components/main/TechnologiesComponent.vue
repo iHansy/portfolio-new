@@ -12,15 +12,34 @@
         <h2>Languages & Frameworks</h2>
       </v-col>
       <v-col cols="10" class="background-yellow main-col-right">
-        <v-row>
+        <v-row
+          class="d-flex align-center justify-space-around"
+          style="height: 50%"
+        >
           <img
-            v-for="(image, i) in images"
+            v-for="(image, i) in languageTopImages"
             :key="i"
-            :src="require('~/static/technologies/bitbucket.png')"
+            height="75px"
+            width="75px"
+            class="ma-2"
+            :src="require(`~/static/technologies/${image.src}`)"
             alt="Javascript Icon"
           />
         </v-row>
-        <v-row> </v-row>
+        <v-row
+          class="d-flex align-center justify-space-around"
+          style="height: 50%"
+        >
+          <img
+            v-for="(image, i) in languageBottomImages"
+            :key="i"
+            height="75px"
+            width="75px"
+            class="ma-2"
+            :src="require(`~/static/technologies/${image.src}`)"
+            alt="Javascript Icon"
+          />
+        </v-row>
       </v-col>
     </v-row>
     <v-row class="mt-15 main-row">
@@ -39,33 +58,42 @@ import TitleBracket from '~/components/reuseables/TitleBracket';
 export default {
   name: 'TechnologiesComponent',
   components: { BackgroundCirclesComponent, TitleBracket },
+
   data() {
     return {
       title: 'Technologies',
       titleId: 'technologies-title',
-      images: [
-        { name: 'Bitbucket', src: '~/static/technologies/bitbucket.png' },
-        { name: 'CSS', src: '~/static/technologies/css.png' },
-        { name: 'Docker', src: '~/static/technologies/docker.png' },
-        { name: 'Git', src: '~/static/technologies/git.png' },
-        { name: 'Github', src: '~/static/technologies/github.png' },
-        { name: 'Heroku', src: '~/static/technologies/heroku.png' },
-        { name: 'Html', src: '~/static/technologies/html.png' },
-        { name: 'Javascript', src: '~/static/technologies/javascript.png' },
-        { name: 'Jira', src: '~/static/technologies/jira.png' },
-        { name: 'Material UI', src: '~/static/technologies/material-ui.png' },
-        { name: 'Monday', src: '~/static/technologies/monday.png' },
-        { name: 'Nest.js', src: '~/static/technologies/nestjs.svg' },
-        { name: 'Node.js', src: '~/static/technologies/nodejs.png' },
-        { name: 'Npm', src: '~/static/technologies/npm.png' },
-        { name: 'Phpstorm', src: '~/static/technologies/phpstorm.jpeg' },
-        { name: 'Postgresql', src: '~/static/technologies/postgresql.png' },
-        { name: 'React.js', src: '~/static/technologies/reactjs.svg' },
-        { name: 'Scss', src: '~/static/technologies/scss.png' },
-        { name: 'Typeorm', src: '~/static/technologies/typeorm.jpeg' },
-        { name: 'Vscode', src: '~/static/technologies/vscode.png' },
-        { name: 'Vue.js', src: '~/static/technologies/vuejs.png' },
-        { name: 'Vuetify', src: '~/static/technologies/vuetify.png' }
+      timer: false,
+      languageTopImages: [
+        { name: 'Html', src: 'html.png' },
+        { name: 'CSS', src: 'css.png' },
+        { name: 'SCSS', src: 'scss.png' },
+        { name: 'Vuetify', src: 'vuetify.png' },
+        { name: 'Material UI', src: 'material-ui.png' },
+        { name: 'Javascript', src: 'javascript.png' },
+        { name: 'Nuxt.js', src: 'nuxtjs.png' }
+      ],
+      languageBottomImages: [
+        { name: 'Vue.js', src: 'vuejs.png' },
+        { name: 'React.js', src: 'reactjs.svg' },
+        { name: 'Nest.js', src: 'nestjs.svg' },
+        { name: 'Node.js', src: 'nodejs.png' },
+        { name: 'Postgresql', src: 'postgresql.png' },
+        { name: 'Typeorm', src: 'typeorm.png' }
+      ],
+      toolTopImages: [
+        { name: 'Phpstorm', src: 'phpstorm.png' },
+        { name: 'VS code', src: 'vscode.png' },
+        { name: 'Git', src: 'git.png' },
+        { name: 'Npm', src: 'npm.png' },
+        { name: 'Docker', src: 'docker.png' }
+      ],
+      toolBottomImages: [
+        { name: 'Bitbucket', src: 'bitbucket.png' },
+        { name: 'Github', src: 'github.png' },
+        { name: 'Heroku', src: 'heroku.png' },
+        { name: 'Jira', src: 'jira.png' },
+        { name: 'Monday', src: 'monday.png' }
       ]
     };
   }
