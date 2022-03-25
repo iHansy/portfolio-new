@@ -290,6 +290,12 @@ h2 {
   .main-col-left {
     border-top-left-radius: 48px;
     border-bottom-left-radius: 48px;
+    &::after {
+      background-color: black;
+      width: 2px;
+      height: 200px;
+      content: '';
+    }
   }
 
   .main-col-right {
