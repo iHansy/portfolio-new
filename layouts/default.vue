@@ -6,7 +6,7 @@
       fixed
     >
       <span v-if="$vuetify.breakpoint.smAndDown" style="position: relative">
-        <span style="position: absolute">
+        <span style="position: absolute" class="pb-1">
           <v-btn small icon class="hamburger-menu" @click="drawer = true">
             <v-icon>mdi-menu</v-icon>
           </v-btn>
@@ -23,7 +23,7 @@
             <span>
               <v-icon
                 color="black"
-                style="cursor: pointer"
+                style="cursor: pointer; bottom: 2px"
                 @click="openLink('github')"
               >
                 mdi-github
@@ -32,7 +32,7 @@
             <span>
               <v-icon
                 color="linkedInBlue"
-                style="cursor: pointer"
+                style="cursor: pointer; bottom: 2px"
                 @click="openLink('linkedin')"
               >
                 mdi-linkedin

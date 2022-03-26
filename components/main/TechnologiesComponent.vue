@@ -7,11 +7,14 @@
     <v-row class="mt-15 main-row">
       <v-col
         cols="2"
-        class="background-cyan main-col-left d-flex align-center justify-center py-0"
+        class="main-col-left d-flex align-center justify-center py-0"
       >
         <h2 class="text-center">Languages & Frameworks</h2>
       </v-col>
-      <v-col cols="10" class="background-yellow main-col-right py-0">
+      <v-col cols="10" class="main-col-right py-0">
+        <span style="position: relative">
+          <span class="vertical-divider" />
+        </span>
         <v-row
           class="d-flex align-center justify-space-around ma-0"
           style="height: 50%"
@@ -20,7 +23,7 @@
             v-for="(image, i) in languageTopImages"
             :key="i"
             style="width: 14%"
-            class="pt-4"
+            class="pt-4 tech-div"
           >
             <div class="d-flex justify-center">
               <img
@@ -44,7 +47,7 @@
             v-for="(image, i) in languageBottomImages"
             :key="i"
             style="width: 14%"
-            class="pt-2"
+            class="pt-2 tech-div"
           >
             <div class="d-flex justify-center">
               <img
@@ -65,11 +68,14 @@
     <v-row class="mt-15 main-row">
       <v-col
         cols="2"
-        class="background-cyan main-col-left d-flex align-center justify-center py-0"
+        class="main-col-left d-flex align-center justify-center py-0"
       >
         <h2 class="text-center">Tools</h2>
       </v-col>
-      <v-col cols="10" class="background-yellow main-col-right py-0">
+      <v-col cols="10" class="main-col-right py-0">
+        <span style="position: relative">
+          <span class="vertical-divider" />
+        </span>
         <v-row
           class="d-flex align-center justify-space-around ma-0"
           style="height: 50%"
@@ -78,7 +84,7 @@
             v-for="(image, i) in toolTopImages"
             :key="i"
             style="width: 14%"
-            class="pt-4"
+            class="pt-4 tech-div"
           >
             <div class="d-flex justify-center">
               <img
@@ -89,7 +95,7 @@
                 alt="Javascript Icon"
               />
             </div>
-            <p class="text-center pt-2">
+            <p class="text-center pt-2" style="font-size: 18px">
               {{ image.name }}
             </p>
           </v-div>
@@ -102,7 +108,7 @@
             v-for="(image, i) in toolBottomImages"
             :key="i"
             style="width: 14%"
-            class="pt-2"
+            class="pt-2 tech-div"
           >
             <div class="d-flex justify-center">
               <img

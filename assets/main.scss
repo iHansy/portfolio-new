@@ -1,7 +1,9 @@
-$primary: #6dadff;
+$primary: #6dadff; //109 173 255
+$primary-bg: #f5f9ffff;
 $linkedInBlue: #2c66bc;
 $grey1: #f5f5f5;
 $grey2: #f0f0f0;
+$divider-vertical: #d2d2d2;
 $backgroundCircles: #f6f9fe;
 
 // --------------------------------- GLOBAL  ---------------------------------
@@ -48,15 +50,15 @@ h2 {
     .circle-2 {
       height: 275px;
       width: 275px;
-      top: 7vh; // +7vh
-      right: 5vw; // -7vw
+      top: 7vh;
+      right: 5vw;
     }
 
     .circle-3 {
       height: 250px;
       width: 250px;
-      top: 8vh; // +8vh
-      left: 10vw; // -22vw
+      top: 8vh;
+      left: 10vw;
     }
   }
 
@@ -246,7 +248,7 @@ h2 {
 
   .hamburger-menu {
     position: relative;
-    bottom: 13px;
+    bottom: 15px;
     left: 5px;
   }
 }
@@ -285,22 +287,26 @@ h2 {
     position: relative;
     border-radius: 50px;
     border: grey 2px solid;
+    background-color: $primary-bg;
   }
 
   .main-col-left {
     border-top-left-radius: 48px;
     border-bottom-left-radius: 48px;
-    &::after {
-      background-color: black;
-      width: 2px;
-      height: 200px;
-      content: '';
-    }
   }
 
   .main-col-right {
     border-top-right-radius: 48px;
     border-bottom-right-radius: 48px;
+  }
+
+  .vertical-divider {
+    position: absolute;
+    top: 28px;
+    background-color: $divider-vertical;
+    height: 200px;
+    width: 2px;
+    border-radius: 25px;
   }
 }
 
