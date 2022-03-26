@@ -122,6 +122,11 @@ h2 {
     height: 300px;
     width: 300px;
   }
+
+  .tech-div-1,
+  .tech-div-2 {
+    width: 24%;
+  }
 }
 
 // lg screen (vuetify breakpoints)
@@ -134,6 +139,11 @@ h2 {
   .headshot-img {
     height: 350px;
     width: 350px;
+  }
+
+  .tech-div-1,
+  .tech-div-2 {
+    width: 14%;
   }
 }
 

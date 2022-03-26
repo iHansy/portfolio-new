@@ -20,10 +20,9 @@
           style="height: 50%"
         >
           <v-div
-            v-for="(image, i) in languageTopImages"
+            v-for="(image, i) in languageImages1"
             :key="i"
-            style="width: 14%"
-            class="pt-4 tech-div"
+            class="tech-div-1"
           >
             <div class="d-flex justify-center">
               <img
@@ -44,10 +43,9 @@
           style="height: 50%"
         >
           <v-div
-            v-for="(image, i) in languageBottomImages"
+            v-for="(image, i) in languageImages2"
             :key="i"
-            style="width: 14%"
-            class="pt-2 tech-div"
+            class="tech-div-2"
           >
             <div class="d-flex justify-center">
               <img
@@ -81,10 +79,10 @@
           style="height: 50%"
         >
           <v-div
-            v-for="(image, i) in toolTopImages"
+            v-for="(image, i) in toolImages1"
             :key="i"
             style="width: 14%"
-            class="pt-4 tech-div"
+            class="pt-4 tech-div-3"
           >
             <div class="d-flex justify-center">
               <img
@@ -105,10 +103,10 @@
           style="height: 50%"
         >
           <v-div
-            v-for="(image, i) in toolBottomImages"
+            v-for="(image, i) in toolImages2"
             :key="i"
             style="width: 14%"
-            class="pt-2 tech-div"
+            class="pt-2 tech-div-4"
           >
             <div class="d-flex justify-center">
               <img
@@ -142,7 +140,7 @@ export default {
       title: 'Technologies',
       titleId: 'technologies-title',
       timer: false,
-      languageTopImages: [
+      languageImages1: [
         { name: 'Html', src: 'html.png' },
         { name: 'CSS', src: 'css.png' },
         { name: 'SCSS', src: 'scss.png' },
@@ -157,7 +155,8 @@ export default {
         },
         { name: 'Nuxt.js', src: 'nuxtjs.png' }
       ],
-      languageBottomImages: [
+      languageImages3: [],
+      languageImages2: [
         { name: 'Vue.js', src: 'vuejs.png' },
         { name: 'React.js', src: 'reactjs.svg' },
         { name: 'Nest.js', src: 'nestjs.svg' },
@@ -168,7 +167,7 @@ export default {
         },
         { name: 'Typeorm', src: 'typeorm.png' }
       ],
-      toolTopImages: [
+      toolImages1: [
         {
           name: 'Phpstorm',
           src: 'phpstorm.png'
@@ -178,7 +177,7 @@ export default {
         { name: 'Npm', src: 'npm.png' },
         { name: 'Docker', src: 'docker.png' }
       ],
-      toolBottomImages: [
+      toolImages2: [
         {
           name: 'Bitbucket',
           src: 'bitbucket.png'
@@ -189,6 +188,18 @@ export default {
         { name: 'Monday', src: 'monday.png' }
       ]
     };
+  },
+  mounted() {
+    window.addEventListener('resize', this.onScreenResize, { passive: true });
+  },
+  beforeDestroy() {
+    window.addEventListener('resize', this.onScreenResize);
+  },
+  methods: {
+    onScreenResize() {
+      const width = window.innerWidth;
+      console.log('width', width);
+    }
   }
 };
 </script>

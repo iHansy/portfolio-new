@@ -19,6 +19,7 @@ module.exports = {
   rules: {
     'trailing-commas': 'off',
     'vue/valid-v-slot': 'off',
-    'vue/v-slot-style': 'off'
+    'vue/v-slot-style': 'off',
+    'no-console': 'off'
   }
 };
