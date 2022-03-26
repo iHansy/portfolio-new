@@ -123,10 +123,18 @@ h2 {
     width: 300px;
   }
 
-  .tech-div-1,
-  .tech-div-2 {
-    width: 24%;
+  .div-languages-images {
+    width: 20%;
   }
+
+  .vertical-divider-1 {
+    height: 288px !important;
+    top: 36px !important;
+  }
+
+  //.tech-lang-frame-text {
+  //  font-size: 20px;
+  //}
 }
 
 // lg screen (vuetify breakpoints)
@@ -141,10 +149,18 @@ h2 {
     width: 350px;
   }
 
-  .tech-div-1,
-  .tech-div-2 {
+  .div-languages-images {
     width: 14%;
   }
+
+  .vertical-divider-1 {
+    height: 198px !important;
+    top: 20px !important;
+  }
+
+  //.tech-lang-frame-text {
+  //  font-size: 24px;
+  //}
 }
 
 // custom largest screen
@@ -292,7 +308,6 @@ h2 {
   }
 
   .main-row {
-    min-height: 250px;
     z-index: 0;
     position: relative;
     border-radius: 50px;
@@ -310,13 +325,13 @@ h2 {
     border-bottom-right-radius: 48px;
   }
 
-  .vertical-divider {
+  .vertical-divider-1 {
     position: absolute;
-    top: 28px;
     background-color: $divider-vertical;
-    height: 200px;
+    height: 198px;
+    top: 20px;
     width: 2px;
-    border-radius: 25px;
+    border-radius: 100px;
   }
 }
 

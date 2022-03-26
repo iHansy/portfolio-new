@@ -4,66 +4,87 @@
       <BackgroundCirclesComponent class="tech-circles-component" />
       <TitleBracket :title="title" :title-id="titleId" />
     </v-row>
-    <v-row class="mt-15 main-row">
+    <v-row class="mt-15 main-row mx-md-3 px-0 px-md-2">
       <v-col
         cols="2"
         class="main-col-left d-flex align-center justify-center py-0"
       >
-        <h2 class="text-center">Languages & Frameworks</h2>
+        <h2 class="text-center tech-lang-frame-text">Languages & Frameworks</h2>
       </v-col>
-      <v-col cols="10" class="main-col-right py-0">
+      <v-col cols="10" class="main-col-right">
         <span style="position: relative">
-          <span class="vertical-divider" />
+          <span class="vertical-divider-1" />
         </span>
-        <v-row
-          class="d-flex align-center justify-space-around ma-0"
-          style="height: 50%"
-        >
-          <v-div
+        <v-row class="d-flex align-center justify-space-around ma-0">
+          <div
             v-for="(image, i) in languageImages1"
             :key="i"
-            class="tech-div-1"
+            class="pa-3 div-languages-images"
           >
             <div class="d-flex justify-center">
               <img
+                :src="require(`~/static/technologies/${image.src}`)"
                 height="65px"
                 width="65px"
                 class="mx-auto"
-                :src="require(`~/static/technologies/${image.src}`)"
                 alt="Javascript Icon"
               />
             </div>
-            <p class="text-center pt-2" style="font-size: 18px">
+            <p class="text-center pt-1 mb-0" style="font-size: 18px">
               {{ image.name }}
             </p>
-          </v-div>
+          </div>
         </v-row>
-        <v-row
-          class="d-flex align-center justify-space-around ma-0"
-          style="height: 50%"
-        >
-          <v-div
-            v-for="(image, i) in languageImages2"
-            :key="i"
-            class="tech-div-2"
-          >
-            <div class="d-flex justify-center">
-              <img
-                height="65px"
-                width="65px"
-                class="mx-auto"
-                :src="require(`~/static/technologies/${image.src}`)"
-                alt="Javascript Icon"
-              />
-            </div>
-            <p class="text-center pt-2" style="font-size: 18px">
-              {{ image.name }}
-            </p>
-          </v-div>
-        </v-row>
+
+        <!--        <v-row-->
+        <!--          class="d-flex align-center justify-space-around ma-0"-->
+        <!--          style="height: 50%"-->
+        <!--        >-->
+        <!--          <div-->
+        <!--            v-for="(image, i) in languageImages1"-->
+        <!--            :key="i"-->
+        <!--            class="tech-div-1"-->
+        <!--          >-->
+        <!--            <div class="d-flex justify-center">-->
+        <!--              <img-->
+        <!--                height="65px"-->
+        <!--                width="65px"-->
+        <!--                class="mx-auto"-->
+        <!--                :src="require(`~/static/technologies/${image.src}`)"-->
+        <!--                alt="Javascript Icon"-->
+        <!--              />-->
+        <!--            </div>-->
+        <!--            <p class="text-center pt-2" style="font-size: 18px">-->
+        <!--              {{ image.name }}-->
+        <!--            </p>-->
+        <!--          </div>-->
+        <!--        </v-row>-->
+        <!--        <v-row-->
+        <!--          class="d-flex align-center justify-space-around ma-0"-->
+        <!--          style="height: 50%"-->
+        <!--        >-->
+        <!--          <div-->
+        <!--            v-for="(image, i) in languageImages2"-->
+        <!--            :key="i"-->
+        <!--            class="tech-div-2"-->
+        <!--          >-->
+        <!--            <div class="d-flex justify-center">-->
+        <!--              <img-->
+        <!--                height="65px"-->
+        <!--                width="65px"-->
+        <!--                class="mx-auto"-->
+        <!--                :src="require(`~/static/technologies/${image.src}`)"-->
+        <!--                alt="Javascript Icon"-->
+        <!--              />-->
+        <!--            </div>-->
+        <!--            <p class="text-center pt-2" style="font-size: 18px">-->
+        <!--              {{ image.name }}-->
+        <!--            </p>-->
+        <!--          </div>-->
+        <!--        </v-row>-->
       </v-col>
     </v-row>
-    <v-row class="mt-15 main-row">
+    <v-row class="mt-15 main-row mx-md-3">
       <v-col
         cols="2"
         class="main-col-left d-flex align-center justify-center py-0"
@@ -78,7 +99,7 @@
           class="d-flex align-center justify-space-around ma-0"
           style="height: 50%"
         >
-          <v-div
+          <div
             v-for="(image, i) in toolImages1"
             :key="i"
             style="width: 14%"
@@ -96,13 +117,13 @@
             <p class="text-center pt-2" style="font-size: 18px">
               {{ image.name }}
             </p>
-          </v-div>
+          </div>
         </v-row>
         <v-row
           class="d-flex align-center justify-space-around ma-0"
           style="height: 50%"
         >
-          <v-div
+          <div
             v-for="(image, i) in toolImages2"
             :key="i"
             style="width: 14%"
@@ -120,7 +141,7 @@
             <p class="text-center pt-2" style="font-size: 18px">
               {{ image.name }}
             </p>
-          </v-div>
+          </div>
         </v-row>
       </v-col>
     </v-row>
@@ -153,7 +174,16 @@ export default {
           name: 'Javascript',
           src: 'javascript.png'
         },
-        { name: 'Nuxt.js', src: 'nuxtjs.png' }
+        { name: 'Nuxt.js', src: 'nuxtjs.png' },
+        { name: 'Vue.js', src: 'vuejs.png' },
+        { name: 'React.js', src: 'reactjs.svg' },
+        { name: 'Nest.js', src: 'nestjs.svg' },
+        { name: 'Node.js', src: 'nodejs.png' },
+        {
+          name: 'Postgresql',
+          src: 'postgresql.png'
+        },
+        { name: 'Typeorm', src: 'typeorm.png' }
       ],
       languageImages3: [],
       languageImages2: [
@@ -190,16 +220,17 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener('resize', this.onScreenResize, { passive: true });
+    // window.addEventListener('resize', this.onScreenResize, { passive: true });
+    console.log('VUETIFY REAKPOINTS', this.$vuetify.breakpoint);
   },
   beforeDestroy() {
-    window.addEventListener('resize', this.onScreenResize);
+    // window.addEventListener('resize', this.onScreenResize);
   },
   methods: {
-    onScreenResize() {
-      const width = window.innerWidth;
-      console.log('width', width);
-    }
+    // onScreenResize() {
+    //   const width = window.innerWidth;
+    //   console.log('width', width);
+    // }
   }
 };
 </script>
