@@ -3,7 +3,7 @@ $primary-bg: #f5f9ffff;
 $linkedInBlue: #2c66bc;
 $grey1: #f5f5f5;
 $grey2: #f0f0f0;
-$divider-vertical: #d2d2d2;
+$content-divider: #dcdcdc;
 $backgroundCircles: #f6f9fe;
 
 // --------------------------------- GLOBAL  ---------------------------------
@@ -86,28 +86,99 @@ h2 {
 }
 
 // xs screen (vuetify breakpoints)
-@media only screen and (max-width: 599px) {
+@media only screen and (min-width: 1px) {
   .div-page-container {
     padding-left: 25px;
     padding-right: 25px;
+  }
+
+  .left-bracket {
+    margin-right: 0;
+  }
+
+  .right-bracket {
+    margin-left: 0;
   }
 
   .headshot-img {
     height: 250px;
     width: 250px;
   }
+
+  .vertical-divider-1,
+  .vertical-divider-2 {
+    display: none;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .tech-img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .div-languages-images {
+    width: 33%;
+  }
+
+  .div-tools-images {
+    width: 33%;
+  }
 }
 
 // sm screen (vuetify breakpoints)
 @media only screen and (min-width: 600px) {
+  .left-bracket {
+    margin-right: 5px;
+  }
+
+  .right-bracket {
+    margin-left: 5px;
+  }
+
   .div-page-container {
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .headshot-img {
     height: 275px;
     width: 275px;
+  }
+
+  .div-languages-images {
+    width: 20%;
+  }
+
+  .div-tools-images {
+    width: 20%;
+  }
+
+  .horizontal-divider-1 {
+    display: block;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .tech-p-tag {
+    font-size: 18px !important;
+  }
+
+  .tech-img {
+    height: 65px;
+    width: 65px;
   }
 }
 
@@ -123,18 +194,21 @@ h2 {
     width: 300px;
   }
 
-  .div-languages-images {
-    width: 20%;
-  }
-
   .vertical-divider-1 {
+    display: block;
     height: 288px !important;
     top: 36px !important;
   }
 
-  //.tech-lang-frame-text {
-  //  font-size: 20px;
-  //}
+  .horizontal-divider-1 {
+    display: none;
+  }
+
+  .vertical-divider-2 {
+    display: block;
+    height: 198px !important;
+    top: 20px !important;
+  }
 }
 
 // lg screen (vuetify breakpoints)
@@ -157,10 +231,6 @@ h2 {
     height: 198px !important;
     top: 20px !important;
   }
-
-  //.tech-lang-frame-text {
-  //  font-size: 24px;
-  //}
 }
 
 // custom largest screen
@@ -241,14 +311,6 @@ h2 {
   font-weight: 300;
 }
 
-.left-bracket {
-  margin-right: 5px;
-}
-
-.right-bracket {
-  margin-left: 5px;
-}
-
 .text-span {
   position: relative;
   bottom: 29px;
@@ -325,12 +387,22 @@ h2 {
     border-bottom-right-radius: 48px;
   }
 
-  .vertical-divider-1 {
+  .vertical-divider-1,
+  .vertical-divider-2 {
     position: absolute;
-    background-color: $divider-vertical;
+    background-color: $content-divider;
     height: 198px;
     top: 20px;
     width: 2px;
+    border-radius: 100px;
+  }
+
+  .horizontal-divider-1 {
+    position: relative;
+    background-color: $content-divider;
+    height: 2px;
+    width: 65%;
+    margin: auto;
     border-radius: 100px;
   }
 }

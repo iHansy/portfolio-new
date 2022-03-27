@@ -4,141 +4,66 @@
       <BackgroundCirclesComponent class="tech-circles-component" />
       <TitleBracket :title="title" :title-id="titleId" />
     </v-row>
-    <v-row class="mt-15 main-row mx-md-3 px-0 px-md-2">
+    <v-row class="mt-5 mt-md-15 main-row mx-md-3 px-0 px-md-2">
       <v-col
-        cols="2"
-        class="main-col-left d-flex align-center justify-center py-0"
+        cols="12"
+        md="2"
+        class="main-col-left d-flex align-center justify-center pt-6 pb-4 py-md-0"
       >
-        <h2 class="text-center tech-lang-frame-text">Languages & Frameworks</h2>
+        <h2 class="text-center">Languages & Frameworks</h2>
       </v-col>
-      <v-col cols="10" class="main-col-right">
+      <div class="horizontal-divider-1"></div>
+      <v-col cols="12" md="10" class="main-col-right">
         <span style="position: relative">
           <span class="vertical-divider-1" />
         </span>
         <v-row class="d-flex align-center justify-space-around ma-0">
           <div
-            v-for="(image, i) in languageImages1"
+            v-for="(image, i) in languageImages"
             :key="i"
             class="pa-3 div-languages-images"
           >
             <div class="d-flex justify-center">
               <img
                 :src="require(`~/static/technologies/${image.src}`)"
-                height="65px"
-                width="65px"
-                class="mx-auto"
-                alt="Javascript Icon"
+                class="mx-auto tech-img"
+                :alt="image.name"
               />
             </div>
-            <p class="text-center pt-1 mb-0" style="font-size: 18px">
+            <p class="text-center pt-1 mb-0 tech-p-tag">
               {{ image.name }}
             </p>
           </div>
         </v-row>
-
-        <!--        <v-row-->
-        <!--          class="d-flex align-center justify-space-around ma-0"-->
-        <!--          style="height: 50%"-->
-        <!--        >-->
-        <!--          <div-->
-        <!--            v-for="(image, i) in languageImages1"-->
-        <!--            :key="i"-->
-        <!--            class="tech-div-1"-->
-        <!--          >-->
-        <!--            <div class="d-flex justify-center">-->
-        <!--              <img-->
-        <!--                height="65px"-->
-        <!--                width="65px"-->
-        <!--                class="mx-auto"-->
-        <!--                :src="require(`~/static/technologies/${image.src}`)"-->
-        <!--                alt="Javascript Icon"-->
-        <!--              />-->
-        <!--            </div>-->
-        <!--            <p class="text-center pt-2" style="font-size: 18px">-->
-        <!--              {{ image.name }}-->
-        <!--            </p>-->
-        <!--          </div>-->
-        <!--        </v-row>-->
-        <!--        <v-row-->
-        <!--          class="d-flex align-center justify-space-around ma-0"-->
-        <!--          style="height: 50%"-->
-        <!--        >-->
-        <!--          <div-->
-        <!--            v-for="(image, i) in languageImages2"-->
-        <!--            :key="i"-->
-        <!--            class="tech-div-2"-->
-        <!--          >-->
-        <!--            <div class="d-flex justify-center">-->
-        <!--              <img-->
-        <!--                height="65px"-->
-        <!--                width="65px"-->
-        <!--                class="mx-auto"-->
-        <!--                :src="require(`~/static/technologies/${image.src}`)"-->
-        <!--                alt="Javascript Icon"-->
-        <!--              />-->
-        <!--            </div>-->
-        <!--            <p class="text-center pt-2" style="font-size: 18px">-->
-        <!--              {{ image.name }}-->
-        <!--            </p>-->
-        <!--          </div>-->
-        <!--        </v-row>-->
       </v-col>
     </v-row>
-    <v-row class="mt-15 main-row mx-md-3">
+    <v-row class="mt-10 mt-md-15 main-row mx-md-3 px-0 px-md-2">
       <v-col
-        cols="2"
-        class="main-col-left d-flex align-center justify-center py-0"
+        cols="12"
+        md="2"
+        class="main-col-left d-flex align-center justify-center pt-6 pb-4 py-md-0"
       >
         <h2 class="text-center">Tools</h2>
       </v-col>
-      <v-col cols="10" class="main-col-right py-0">
+      <div class="horizontal-divider-1"></div>
+      <v-col cols="12" md="10" class="main-col-right">
         <span style="position: relative">
-          <span class="vertical-divider" />
+          <span class="vertical-divider-2" />
         </span>
-        <v-row
-          class="d-flex align-center justify-space-around ma-0"
-          style="height: 50%"
-        >
+        <v-row class="d-flex align-center justify-space-around ma-0">
           <div
-            v-for="(image, i) in toolImages1"
+            v-for="(image, i) in toolImages"
             :key="i"
-            style="width: 14%"
-            class="pt-4 tech-div-3"
+            class="pa-3 div-tools-images"
           >
             <div class="d-flex justify-center">
               <img
-                height="65px"
-                width="65px"
-                class="mx-auto"
                 :src="require(`~/static/technologies/${image.src}`)"
-                alt="Javascript Icon"
+                class="mx-auto tech-img"
+                :alt="image.name"
               />
             </div>
-            <p class="text-center pt-2" style="font-size: 18px">
-              {{ image.name }}
-            </p>
-          </div>
-        </v-row>
-        <v-row
-          class="d-flex align-center justify-space-around ma-0"
-          style="height: 50%"
-        >
-          <div
-            v-for="(image, i) in toolImages2"
-            :key="i"
-            style="width: 14%"
-            class="pt-2 tech-div-4"
-          >
-            <div class="d-flex justify-center">
-              <img
-                height="65px"
-                width="65px"
-                class="mx-auto"
-                :src="require(`~/static/technologies/${image.src}`)"
-                alt="Javascript Icon"
-              />
-            </div>
-            <p class="text-center pt-2" style="font-size: 18px">
+            <p class="text-center pt-1 mb-0 tech-p-tag">
               {{ image.name }}
             </p>
           </div>
@@ -161,7 +86,7 @@ export default {
       title: 'Technologies',
       titleId: 'technologies-title',
       timer: false,
-      languageImages1: [
+      languageImages: [
         { name: 'Html', src: 'html.png' },
         { name: 'CSS', src: 'css.png' },
         { name: 'SCSS', src: 'scss.png' },
@@ -185,19 +110,7 @@ export default {
         },
         { name: 'Typeorm', src: 'typeorm.png' }
       ],
-      languageImages3: [],
-      languageImages2: [
-        { name: 'Vue.js', src: 'vuejs.png' },
-        { name: 'React.js', src: 'reactjs.svg' },
-        { name: 'Nest.js', src: 'nestjs.svg' },
-        { name: 'Node.js', src: 'nodejs.png' },
-        {
-          name: 'Postgresql',
-          src: 'postgresql.png'
-        },
-        { name: 'Typeorm', src: 'typeorm.png' }
-      ],
-      toolImages1: [
+      toolImages: [
         {
           name: 'Phpstorm',
           src: 'phpstorm.png'
@@ -205,9 +118,7 @@ export default {
         { name: 'VS code', src: 'vscode.png' },
         { name: 'Git', src: 'git.png' },
         { name: 'Npm', src: 'npm.png' },
-        { name: 'Docker', src: 'docker.png' }
-      ],
-      toolImages2: [
+        { name: 'Docker', src: 'docker.png' },
         {
           name: 'Bitbucket',
           src: 'bitbucket.png'

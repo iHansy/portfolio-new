@@ -1,7 +1,7 @@
 <template>
   <v-row class="about-me">
     <BackgroundCirclesComponent />
-    <v-col cols="12" md="5" class="d-flex justify-center align-center">
+    <v-col cols="12" md="5" class="d-flex justify-center align-center px-0">
       <div class="pt-10 pb-3 pb-md-15 pt-md-0">
         <v-img
           :src="require('/static/about-me/headshot.jpg')"
@@ -9,7 +9,7 @@
         />
       </div>
     </v-col>
-    <v-col cols="12" md="7" class="d-flex justify-center align-center">
+    <v-col cols="12" md="7" class="d-flex justify-center align-center px-0">
       <div class="pb-lg-15 animate__animated animate__fadeInRight">
         <h1 class="text-center pb-7">Welcome</h1>
         <p class="pb-3">
