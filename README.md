@@ -2,9 +2,9 @@
 
 Time Spent
 <br/>
-Developing: 19 hrs
+Developing: 21 hrs
 <br/>
-Designing: 3.5 hours
+Designing: 5 hours
 
 ## Build Setup
 

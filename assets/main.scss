@@ -1,8 +1,7 @@
 $primary: #6dadff; //109 173 255
 $primary-bg: #f5f9ffff;
 $linkedInBlue: #2c66bc;
-$grey1: #f5f5f5;
-$grey2: #f0f0f0;
+$content-border: #afafaf;
 $content-divider: #dcdcdc;
 $backgroundCircles: #f6f9fe;
 
@@ -26,6 +25,10 @@ h2 {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .background-circles {
@@ -372,8 +375,12 @@ h2 {
   .main-row {
     z-index: 0;
     position: relative;
-    border-radius: 50px;
-    border: grey 2px solid;
+    border-radius: 0;
+    transition: border-right 2s, border-radius 2s;
+    border-left: none;
+    border-right: none;
+    border-top: $content-border 2px solid;
+    border-bottom: $content-border 2px solid;
     background-color: $primary-bg;
   }
 

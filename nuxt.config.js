@@ -57,7 +57,6 @@ export default {
           primaryBg: '#f5f9ffff',
           linkedInBlue: '#2c66bc',
           grey1: '#f5f5f5',
-          grey2: '#f0f0f0',
           dividerVertical: '#d2d2d2',
           backgroundCircles: '#f6f9fe'
         }

@@ -4,7 +4,9 @@
       <BackgroundCirclesComponent class="tech-circles-component" />
       <TitleBracket :title="title" :title-id="titleId" />
     </v-row>
-    <v-row class="mt-5 mt-md-15 main-row mx-md-3 px-0 px-md-2">
+    <v-row
+      class="mt-5 mt-sm-10 mt-lg-15 main-row mx-md-3 px-0 px-md-2 animate__animated animate__fadeInLeft"
+    >
       <v-col
         cols="12"
         md="2"
@@ -37,16 +39,24 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row class="mt-10 mt-md-15 main-row mx-md-3 px-0 px-md-2">
+    <v-row
+      id="tech-row-tools"
+      class="mt-10 mt-md-15 main-row mx-md-3 px-0 px-md-2"
+    >
       <v-col
         cols="12"
         md="2"
-        class="main-col-left d-flex align-center justify-center pt-6 pb-4 py-md-0"
+        class="main-col-left d-flex align-center justify-center pt-6 pb-4 py-md-0 opacity-0"
       >
         <h2 class="text-center">Tools</h2>
       </v-col>
       <div class="horizontal-divider-1"></div>
-      <v-col cols="12" md="10" class="main-col-right">
+      <v-col
+        id="tech-col-tools"
+        cols="12"
+        md="10"
+        class="main-col-right opacity-0"
+      >
         <span style="position: relative">
           <span class="vertical-divider-2" />
         </span>
@@ -131,17 +141,32 @@ export default {
     };
   },
   mounted() {
-    // window.addEventListener('resize', this.onScreenResize, { passive: true });
-    console.log('VUETIFY REAKPOINTS', this.$vuetify.breakpoint);
+    window.addEventListener('scroll', this.onScroll);
   },
   beforeDestroy() {
-    // window.addEventListener('resize', this.onScreenResize);
+    window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
-    // onScreenResize() {
-    //   const width = window.innerWidth;
-    //   console.log('width', width);
-    // }
+    onScroll() {
+      let trigger = true;
+      const toolsElCol = document.getElementById('tech-col-tools');
+      const toolsElRow = document.getElementById('tech-row-tools');
+      const rect = toolsElCol.getBoundingClientRect();
+      const elemTop = rect.top;
+      const elemBottom = rect.bottom;
+
+      console.log('ELEMTOP', elemTop);
+      console.log('ELEMBOTTOM', elemBottom);
+
+      const triggerFade = elemTop >= 0 && elemBottom <= window.innerHeight;
+      if (trigger && triggerFade) {
+        toolsElCol.classList.remove('opacity-0');
+        toolsElRow.style.borderRight = 'grey 2px solid';
+        toolsElRow.style.borderRadius = '50px';
+        toolsElCol.classList.add('animate__animated', 'animate__fadeInLeft');
+        trigger = false;
+      }
+    }
   }
 };
 </script>
