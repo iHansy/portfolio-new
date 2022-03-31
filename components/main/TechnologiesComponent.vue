@@ -40,31 +40,28 @@
       </v-col>
     </v-row>
     <v-row
-      id="tech-row-tools"
-      class="mt-10 mt-md-15 main-row mx-md-3 px-0 px-md-2"
+      id="tool-row"
+      class="mt-10 mt-md-15 main-row mx-md-3 px-0 px-md-2 animate"
     >
       <v-col
         cols="12"
         md="2"
-        class="main-col-left d-flex align-center justify-center pt-6 pb-4 py-md-0 opacity-0"
+        class="main-col-left d-flex align-center justify-center pt-6 pb-4 py-md-0 opacity-0 div-tools-left"
       >
         <h2 class="text-center">Tools</h2>
       </v-col>
       <div class="horizontal-divider-1"></div>
-      <v-col
-        id="tech-col-tools"
-        cols="12"
-        md="10"
-        class="main-col-right opacity-0"
-      >
-        <span style="position: relative">
+      <v-col cols="12" md="10" class="main-col-right">
+        <span style="position: relative" class="div-tools-left opacity-0">
           <span class="vertical-divider-2" />
         </span>
         <v-row class="d-flex align-center justify-space-around ma-0">
           <div
             v-for="(image, i) in toolImages"
             :key="i"
-            class="pa-3 div-tools-images"
+            :class="`pa-3 div-tools-images opacity-0 ${
+              findLeftDivs(i) ? 'div-tools-left' : 'div-tools-right'
+            }`"
           >
             <div class="d-flex justify-center">
               <img
@@ -149,22 +146,32 @@ export default {
   methods: {
     onScroll() {
       let trigger = true;
-      const toolsElCol = document.getElementById('tech-col-tools');
-      const toolsElRow = document.getElementById('tech-row-tools');
-      const rect = toolsElCol.getBoundingClientRect();
+      const divToolsRight = document.getElementsByClassName('div-tools-right');
+      const divToolsLeft = document.getElementsByClassName('div-tools-left');
+      const toolsElRow = document.getElementById('tool-row');
+      const rect = toolsElRow.getBoundingClientRect();
       const elemTop = rect.top;
       const elemBottom = rect.bottom;
 
-      console.log('ELEMTOP', elemTop);
-      console.log('ELEMBOTTOM', elemBottom);
-
       const triggerFade = elemTop >= 0 && elemBottom <= window.innerHeight;
       if (trigger && triggerFade) {
-        toolsElCol.classList.remove('opacity-0');
-        toolsElRow.style.borderRight = 'grey 2px solid';
-        toolsElRow.style.borderRadius = '50px';
-        toolsElCol.classList.add('animate__animated', 'animate__fadeInLeft');
+        for (const el of divToolsRight) {
+          el.classList.remove('opacity-0');
+          el.classList.add('animate__animated', 'animate__fadeInRightBig');
+        }
+        for (const el of divToolsLeft) {
+          el.classList.remove('opacity-0');
+          el.classList.add('animate__animated', 'animate__fadeInLeftBig');
+        }
         trigger = false;
+        window.setTimeout(() => {
+          toolsElRow.classList.add('main-row-transitions');
+        }, 700);
+      }
+    },
+    findLeftDivs(i) {
+      if (i === 0 || i === 1 || i === 5 || i === 6) {
+        return true;
       }
     }
   }

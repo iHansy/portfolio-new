@@ -1,9 +1,9 @@
-$primary: #6dadff; //109 173 255
-$primary-bg: #f5f9ffff;
-$linkedInBlue: #2c66bc;
-$content-border: #afafaf;
-$content-divider: #dcdcdc;
-$backgroundCircles: #f6f9fe;
+$primary: rgb(109, 173, 255);
+$primaryBg: rgb(245, 249, 255);
+$linkedInBlue: rgb(44, 102, 188);
+$contentBorder: rgb(175, 175, 175);
+$contentDivider: rgb(220, 220, 220);
+$backgroundCircles: rgb(246, 249, 254);
 
 // --------------------------------- GLOBAL  ---------------------------------
 * {
@@ -375,13 +375,19 @@ h2 {
   .main-row {
     z-index: 0;
     position: relative;
-    border-radius: 0;
-    transition: border-right 2s, border-radius 2s;
+    border-radius: 1px;
+    transition: border-right 1s, border-radius 1s;
     border-left: none;
     border-right: none;
-    border-top: $content-border 2px solid;
-    border-bottom: $content-border 2px solid;
-    background-color: $primary-bg;
+    border-top: $contentBorder 2px solid;
+    border-bottom: $contentBorder 2px solid;
+    background-color: $primaryBg;
+  }
+
+  .main-row-transitions {
+    border-right: $contentBorder 2px solid;
+    border-left: $contentBorder 2px solid;
+    border-radius: 50px;
   }
 
   .main-col-left {
@@ -397,7 +403,7 @@ h2 {
   .vertical-divider-1,
   .vertical-divider-2 {
     position: absolute;
-    background-color: $content-divider;
+    background-color: $contentDivider;
     height: 198px;
     top: 20px;
     width: 2px;
@@ -406,7 +412,7 @@ h2 {
 
   .horizontal-divider-1 {
     position: relative;
-    background-color: $content-divider;
+    background-color: $contentDivider;
     height: 2px;
     width: 65%;
     margin: auto;

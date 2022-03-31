@@ -53,12 +53,12 @@ export default {
           primary: '#000000'
         },
         light: {
-          primary: '#6dadff',
-          primaryBg: '#f5f9ffff',
-          linkedInBlue: '#2c66bc',
-          grey1: '#f5f5f5',
-          dividerVertical: '#d2d2d2',
-          backgroundCircles: '#f6f9fe'
+          primary: 'rgb(109, 173, 255)',
+          primaryBg: 'rgb(245, 249, 255)',
+          linkedInBlue: 'rgb(44, 102, 188)',
+          contentBorder: 'rgb(175, 175, 175)',
+          contentDivider: 'rgb(220, 220, 220)',
+          backgroundCircles: 'rgb(246, 249, 254)'
         }
       }
     }
