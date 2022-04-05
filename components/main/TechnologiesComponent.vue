@@ -25,7 +25,7 @@
             v-for="(image, i) in languageImages"
             :key="i"
             :class="`pa-3 div-languages-images opacity-0 ${
-              leftLanguangeDivs(i)
+              leftLanguagesDivs(i)
                 ? 'div-languages-left'
                 : 'div-languages-right'
             }`"
@@ -94,7 +94,8 @@ export default {
     return {
       title: 'Technologies',
       titleId: 'technologies-title',
-      timer: false,
+      triggerLanguages: true,
+      triggerTools: true,
       languageImages: [
         { name: 'Html', src: 'html.png' },
         { name: 'CSS', src: 'css.png' },
@@ -147,45 +148,65 @@ export default {
   },
   methods: {
     onScroll() {
-      this.buildAndTriggerTransition(
-        'div-tools-right',
-        'div-tools-left',
-        'tools-row'
-      );
-      this.buildAndTriggerTransition(
-        'div-languages-right',
-        'div-languages-left',
-        'languages-row'
-      );
-    },
-    buildAndTriggerTransition(divsRightClass, divsLeftClass, containerRowId) {
-      let buildActive = true;
-      if (buildActive) {
-        const divsRight = document.getElementsByClassName(divsRightClass);
-        const divsLeft = document.getElementsByClassName(divsLeftClass);
-        const containerRow = document.getElementById(containerRowId);
-        const rect = containerRow.getBoundingClientRect();
-        const elemTop = rect.top;
-        const elemBottom = rect.bottom;
-
-        const triggerFade = elemTop >= 0 && elemBottom <= window.innerHeight;
-        if (triggerFade) {
-          for (const el of divsRight) {
-            el.classList.remove('opacity-0');
-            el.classList.add('animate__animated', 'animate__fadeInRightBig');
-          }
-          for (const el of divsLeft) {
-            el.classList.remove('opacity-0');
-            el.classList.add('animate__animated', 'animate__fadeInLeftBig');
-          }
-          buildActive = false;
-          window.setTimeout(() => {
-            containerRow.classList.add('main-row-transitions');
-          }, 1000);
-        }
+      if (this.triggerLanguages) {
+        this.buildAndTriggerTransition(
+          'div-languages-right',
+          'div-languages-left',
+          'languages-row',
+          'languages'
+        );
+      }
+      if (this.triggerTools) {
+        this.buildAndTriggerTransition(
+          'div-tools-right',
+          'div-tools-left',
+          'tools-row',
+          'tools'
+        );
       }
     },
-    leftLanguangeDivs(i) {
+    buildAndTriggerTransition(
+      divsRightClass,
+      divsLeftClass,
+      containerRowId,
+      triggerType
+    ) {
+      const divsRight = document.getElementsByClassName(divsRightClass);
+      const divsLeft = document.getElementsByClassName(divsLeftClass);
+      const containerRow = document.getElementById(containerRowId);
+      const rect = containerRow.getBoundingClientRect();
+      const elemTop = rect.top;
+      const elemBottom = rect.bottom;
+
+      let elemBottomComparison = window.innerHeight;
+      if (window.innerWidth < 600) {
+        elemBottomComparison += 200;
+      }
+
+      const triggerFade = elemTop >= 0 && elemBottom <= elemBottomComparison;
+      if (triggerFade) {
+        for (const el of divsRight) {
+          el.classList.remove('opacity-0');
+          el.classList.add('animate__animated', 'animate__fadeInRightBig');
+        }
+
+        for (const el of divsLeft) {
+          el.classList.remove('opacity-0');
+          el.classList.add('animate__animated', 'animate__fadeInLeftBig');
+        }
+
+        if (triggerType === 'languages') {
+          this.triggerLanguages = false;
+        } else {
+          this.triggerTools = false;
+        }
+
+        window.setTimeout(() => {
+          containerRow.classList.add('main-row-transitions');
+        }, 1000);
+      }
+    },
+    leftLanguagesDivs(i) {
       if (i === 0 || i === 1 || i === 2 || i === 7 || i === 8 || i === 9) {
         return true;
       }

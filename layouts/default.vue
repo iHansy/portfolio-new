@@ -31,7 +31,7 @@
             </span>
             <span>
               <v-icon
-                color="linkedInBlue"
+                color="rgb(44, 102, 188)"
                 style="cursor: pointer; bottom: 2px"
                 @click="openLink('linkedin')"
               >
@@ -131,11 +131,11 @@
         <div v-if="$vuetify.breakpoint.smAndUp" class="cursor-pointer">
           Feeling adventurous?
         </div>
-        <v-icon v-else medium color="primary" class="cursor-pointer">
+        <v-icon v-else medium color="rgb(109, 173, 255)" class="cursor-pointer">
           mdi-emoticon-excited
         </v-icon>
         <div class="footer-game-divider mx-2" />
-        <v-icon medium color="primary" class="cursor-pointer">
+        <v-icon medium color="rgb(109, 173, 255)" class="cursor-pointer">
           mdi-trophy
         </v-icon>
       </v-col>

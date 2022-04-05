@@ -50,7 +50,7 @@ export default {
       dark: false,
       themes: {
         dark: {
-          primary: '#000000'
+          // primary: '#000000'
         },
         light: {
           primary: 'rgb(109, 173, 255)',
