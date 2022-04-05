@@ -5,25 +5,30 @@
       <TitleBracket :title="title" :title-id="titleId" />
     </v-row>
     <v-row
-      class="mt-5 mt-sm-10 mt-lg-15 main-row mx-md-3 px-0 px-md-2 animate__animated animate__fadeInLeft"
+      id="languages-row"
+      class="mt-5 mt-sm-10 mt-lg-15 main-row mx-md-3 px-0 px-md-2"
     >
       <v-col
         cols="12"
         md="2"
-        class="main-col-left d-flex align-center justify-center pt-6 pb-4 py-md-0"
+        class="main-col-left d-flex align-center justify-center pt-6 pb-4 py-md-0 opacity-0 div-languages-left"
       >
         <h2 class="text-center">Languages & Frameworks</h2>
       </v-col>
-      <div class="horizontal-divider-1"></div>
+      <div class="horizontal-divider-1 div-languages-left opacity-0"></div>
       <v-col cols="12" md="10" class="main-col-right">
-        <span style="position: relative">
+        <span style="position: relative" class="div-languages-left opacity-0">
           <span class="vertical-divider-1" />
         </span>
         <v-row class="d-flex align-center justify-space-around ma-0">
           <div
             v-for="(image, i) in languageImages"
             :key="i"
-            class="pa-3 div-languages-images"
+            :class="`pa-3 div-languages-images opacity-0 ${
+              leftLanguangeDivs(i)
+                ? 'div-languages-left'
+                : 'div-languages-right'
+            }`"
           >
             <div class="d-flex justify-center">
               <img
@@ -39,10 +44,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row
-      id="tool-row"
-      class="mt-10 mt-md-15 main-row mx-md-3 px-0 px-md-2 animate"
-    >
+    <v-row id="tools-row" class="mt-10 mt-md-15 main-row mx-md-3 px-0 px-md-2">
       <v-col
         cols="12"
         md="2"
@@ -50,7 +52,7 @@
       >
         <h2 class="text-center">Tools</h2>
       </v-col>
-      <div class="horizontal-divider-1"></div>
+      <div class="horizontal-divider-1 div-tools-left opacity-0"></div>
       <v-col cols="12" md="10" class="main-col-right">
         <span style="position: relative" class="div-tools-left opacity-0">
           <span class="vertical-divider-2" />
@@ -60,7 +62,7 @@
             v-for="(image, i) in toolImages"
             :key="i"
             :class="`pa-3 div-tools-images opacity-0 ${
-              findLeftDivs(i) ? 'div-tools-left' : 'div-tools-right'
+              leftToolsDivs(i) ? 'div-tools-left' : 'div-tools-right'
             }`"
           >
             <div class="d-flex justify-center">
@@ -145,31 +147,50 @@ export default {
   },
   methods: {
     onScroll() {
-      let trigger = true;
-      const divToolsRight = document.getElementsByClassName('div-tools-right');
-      const divToolsLeft = document.getElementsByClassName('div-tools-left');
-      const toolsElRow = document.getElementById('tool-row');
-      const rect = toolsElRow.getBoundingClientRect();
-      const elemTop = rect.top;
-      const elemBottom = rect.bottom;
+      this.buildAndTriggerTransition(
+        'div-tools-right',
+        'div-tools-left',
+        'tools-row'
+      );
+      this.buildAndTriggerTransition(
+        'div-languages-right',
+        'div-languages-left',
+        'languages-row'
+      );
+    },
+    buildAndTriggerTransition(divsRightClass, divsLeftClass, containerRowId) {
+      let buildActive = true;
+      if (buildActive) {
+        const divsRight = document.getElementsByClassName(divsRightClass);
+        const divsLeft = document.getElementsByClassName(divsLeftClass);
+        const containerRow = document.getElementById(containerRowId);
+        const rect = containerRow.getBoundingClientRect();
+        const elemTop = rect.top;
+        const elemBottom = rect.bottom;
 
-      const triggerFade = elemTop >= 0 && elemBottom <= window.innerHeight;
-      if (trigger && triggerFade) {
-        for (const el of divToolsRight) {
-          el.classList.remove('opacity-0');
-          el.classList.add('animate__animated', 'animate__fadeInRightBig');
+        const triggerFade = elemTop >= 0 && elemBottom <= window.innerHeight;
+        if (triggerFade) {
+          for (const el of divsRight) {
+            el.classList.remove('opacity-0');
+            el.classList.add('animate__animated', 'animate__fadeInRightBig');
+          }
+          for (const el of divsLeft) {
+            el.classList.remove('opacity-0');
+            el.classList.add('animate__animated', 'animate__fadeInLeftBig');
+          }
+          buildActive = false;
+          window.setTimeout(() => {
+            containerRow.classList.add('main-row-transitions');
+          }, 1000);
         }
-        for (const el of divToolsLeft) {
-          el.classList.remove('opacity-0');
-          el.classList.add('animate__animated', 'animate__fadeInLeftBig');
-        }
-        trigger = false;
-        window.setTimeout(() => {
-          toolsElRow.classList.add('main-row-transitions');
-        }, 700);
       }
     },
-    findLeftDivs(i) {
+    leftLanguangeDivs(i) {
+      if (i === 0 || i === 1 || i === 2 || i === 7 || i === 8 || i === 9) {
+        return true;
+      }
+    },
+    leftToolsDivs(i) {
       if (i === 0 || i === 1 || i === 5 || i === 6) {
         return true;
       }
